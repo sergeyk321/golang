@@ -5,9 +5,19 @@ import (
 	"sort"
 )
 
-func combine(arr1, arr2 []int) []int {
+func combine(n int) []int {
 	var arr3 = make(map[int]int)
-	var ans []int
+	var ans, arr1, arr2 []int
+	var a int
+	for i := 0; i < n*2; i++ {
+		fmt.Scan(&a)
+		if i < n {
+			arr1 = append(arr1, a)
+		} else {
+			arr2 = append(arr2, a)
+		}
+	}
+	fmt.Println("Ответ:")
 	for i := 0; i < len(arr1); i++ {
 		arr3[arr1[i]] = arr1[i]
 	}
@@ -22,18 +32,8 @@ func combine(arr1, arr2 []int) []int {
 }
 
 func main() {
-	var qca, qcb []int
-	var n, a int
+	var n int
 	fmt.Println("Укажите размер множеств:")
 	fmt.Scanln(&n)
-	for i := 0; i < n*2; i++ {
-		fmt.Scan(&a)
-		if i < n {
-			qca = append(qca, a)
-		} else {
-			qcb = append(qcb, a)
-		}
-	}
-	fmt.Println("Ответ:")
-	fmt.Println(combine(qca, qcb))
+	fmt.Println(combine(n))
 }
