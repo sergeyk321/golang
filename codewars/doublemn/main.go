@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func combine(arr1, arr2 []int) []int {
 	var arr3 = make(map[int]int)
@@ -14,6 +17,7 @@ func combine(arr1, arr2 []int) []int {
 	for _, j := range arr3 {
 		ans = append(ans, j)
 	}
+	sort.Ints(ans)
 	return ans
 }
 

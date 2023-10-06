@@ -22,5 +22,7 @@ func NextBigger(n int) int {
 }
 
 func main() {
-	fmt.Print(NextBigger(123))
+	var n int
+	fmt.Scanln(&n)
+	fmt.Print(NextBigger(n))
 }
