@@ -44,7 +44,6 @@ func main() {
 		//общая выручка магазина
 		thisProductSum, _ := strconv.Atoi(data[i][6])
 		sum += thisProductSum
-
 	}
 	for i := 1; i < len(data); i++ {
 		thisProductSum, _ := strconv.Atoi(data[i][6])                              //выручка с этого товара
@@ -70,15 +69,10 @@ func main() {
 		}
 	}
 
-	fmt.Printf("Общая выручка магазина = %v", sum)
-	fmt.Println()
-	fmt.Printf("Товар %v был продан максимальное количество раз : %v", maxProductAmountName, maxProductAmount)
-	fmt.Println()
-	fmt.Printf("Товар %v принес наибольшую выручку : %v", maxProductSumName, maxProductSum)
-	fmt.Println()
+	fmt.Printf("Общая выручка магазина = %v\n", sum)
+	fmt.Printf("Товар %v был продан максимальное количество раз : %v\n", maxProductAmountName, maxProductAmount)
+	fmt.Printf("Товар %v принес наибольшую выручку : %v\n", maxProductSumName, maxProductSum)
 	for _, part := range info {
-		fmt.Println()
-		fmt.Printf("Товар %v был продан %v раз и составляет ~%v%% от общей выручки", part[0], part[1], part[2])
-		fmt.Println()
+		fmt.Printf("\nТовар %v был продан %v раз и составляет ~%v%% от общей выручки\n", part[0], part[1], part[2])
 	}
 }
